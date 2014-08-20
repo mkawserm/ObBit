@@ -60,8 +60,9 @@ class ObBitBase{
         ///
         /// check if the bit is on at specified position
         ///////////////////////////////////////////////////////////////////////
+        static bool isOn(unsigned char &number, const unsigned short &index);
+        static bool isOn(unsigned short &number, const unsigned short &index);
         static bool isOn(unsigned long &number, const unsigned short &index);
-
         static bool isOn(unsigned long long &number, const unsigned short &index);
 
 
@@ -73,8 +74,9 @@ class ObBitBase{
         ///
         /// check if the bit is off at specified position
         ///////////////////////////////////////////////////////////////////////
+        static bool isOff(unsigned char &number, const unsigned short &index);
+        static bool isOff(unsigned short &number, const unsigned short &index);
         static bool isOff(unsigned long &number, const unsigned short &index);
-
         static bool isOff(unsigned long long &number, const unsigned short &index);
 
 
@@ -85,8 +87,9 @@ class ObBitBase{
         ///
         /// turn on bit at specified position
         ///////////////////////////////////////////////////////////////////////
+        static void set(unsigned char &number, const unsigned short &index);
+        static void set(unsigned short &number, const unsigned short &index);
         static void set(unsigned long &number, const unsigned short &index);
-
         static void set(unsigned long long &number, const unsigned short &index);
 
 
@@ -97,18 +100,22 @@ class ObBitBase{
         ///
         /// turn off bit at specified position
         ///////////////////////////////////////////////////////////////////////
+        static void unset(unsigned char &number, const unsigned short &index);
+        static void unset(unsigned short &number, const unsigned short &index);
         static void unset(unsigned long &number, const unsigned short &index);
-
         static void unset(unsigned long long &number, const unsigned short &index);
+
 
         ///////////////////////////////////////////////////////////////////////
         /// \brief toggle toggle bitween on and off
         /// \param number 8bit/16bit/32bit/64bit signed/unsigned integer
         /// \param index bit position
         ///////////////////////////////////////////////////////////////////////
+        static void toggle(unsigned char &number, const unsigned short &index);
+        static void toggle(unsigned short &number, const unsigned short &index);
         static void toggle(unsigned long &number, const unsigned short &index);
-
         static void toggle(unsigned long long &number, const unsigned short &index);
+
 
         ///////////////////////////////////////////////////////////////////////
         /// \brief setRightMost turn on the rightmost bit
@@ -116,7 +123,11 @@ class ObBitBase{
         ///
         /// turn on the right most bit
         ///////////////////////////////////////////////////////////////////////
+        static void setRightMost(unsigned char &number);
+        static void setRightMost(unsigned short &number);
         static void setRightMost(unsigned long &number);
+        static void setRightMost(unsigned long long &number);
+
 
         ///////////////////////////////////////////////////////////////////////
         /// \brief unsetRightMost turn off the rightmost bit
@@ -124,7 +135,11 @@ class ObBitBase{
         ///
         /// turn off the right most bit
         ///////////////////////////////////////////////////////////////////////
+        static void unsetRightMost(unsigned char &number);
+        static void unsetRightMost(unsigned short &number);
         static void unsetRightMost(unsigned long &number);
+        static void unsetRightMost(unsigned long long &number);
+
 
         ///////////////////////////////////////////////////////////////////////
         /// \brief isolateRightMostOne isolate the right most one bit
@@ -132,7 +147,11 @@ class ObBitBase{
         ///
         /// protect the rightmost one bit and change other bits
         ///////////////////////////////////////////////////////////////////////
+        static void isolateRightMostOne(unsigned char &number);
+        static void isolateRightMostOne(unsigned short &number);
         static void isolateRightMostOne(unsigned long &number);
+        static void isolateRightMostOne(unsigned long long &number);
+
 
         ///////////////////////////////////////////////////////////////////////
         /// \brief isolateRightMostZero
@@ -140,7 +159,10 @@ class ObBitBase{
         ///
         /// protect the rightmost zero bit and change other bits
         ///////////////////////////////////////////////////////////////////////
+        static void isolateRightMostZero(unsigned char &number);
+        static void isolateRightMostZero(unsigned short &number);
         static void isolateRightMostZero(unsigned long &number);
+        static void isolateRightMostZero(unsigned long long &number);
 
 };
 
