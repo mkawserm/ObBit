@@ -1,4 +1,4 @@
 ObBit
 =====
 
-Bit Manipulation Helper Object
+Bit Manipulation Helper Objects
