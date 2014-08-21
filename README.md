@@ -32,9 +32,8 @@ How To Use
 
 using namespace std;
 
-int main()
+int main(){
 
-{
     cout << "8 BIT ObBit Example" << endl;
 
     ObBit<UBIT8> b8;
@@ -73,5 +72,4 @@ int main()
 
     cout <<endl<<"******************************************************************"<<endl<<endl;
 
-    return 0;
-}
+    return 0;}
