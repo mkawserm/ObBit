@@ -19,10 +19,10 @@
 #ifndef OBBIT
 #define OBBIT
 
-typedef unsigned char UBIT8;
-typedef unsigned short UBIT16;
-typedef unsigned long UBIT32;
-typedef unsigned long long UBIT64;
+typedef unsigned char UBIT8;  // unsigned 8bit integer
+typedef unsigned short UBIT16;  // unsigned 16bit integer
+typedef unsigned long UBIT32;  // unsigned 32bit integer
+typedef unsigned long long UBIT64;  // unsigned 64bit integer
 
 ///////////////////////////////////////////////////////////////////////////////
 /// \brief The ObBitBase class
