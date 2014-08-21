@@ -293,3 +293,17 @@ char * ObBitBase::binary(unsigned long long &number)
     bnumber[i] = '\0';
     return bnumber;
 }
+
+
+/*
+template <typename T> ObBit<T>::ObBit():
+    vOneZero(0)
+{
+
+}
+
+template <typename T> char * ObBit<T>::binary()
+{
+    return ObBitBase::binary(this->vOneZero);
+}
+*/

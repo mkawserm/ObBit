@@ -19,6 +19,10 @@
 #ifndef OBBIT
 #define OBBIT
 
+typedef unsigned char UBIT8;
+typedef unsigned short UBIT16;
+typedef unsigned long UBIT32;
+typedef unsigned long long UBIT64;
 
 ///////////////////////////////////////////////////////////////////////////////
 /// \brief The ObBitBase class
@@ -157,7 +161,70 @@ class ObBitBase{
 
 
 
+template <typename T> class ObBit{
 
+    private:
+        T vOneZero;
+
+    public:
+        ObBit():
+            vOneZero(0)
+        {
+
+        }
+
+        void on()
+        {
+            ObBitBase::on(this->vOneZero);
+        }
+
+        void off()
+        {
+            ObBitBase::off(this->vOneZero);
+        }
+
+        bool isOn(const unsigned short &index)
+        {
+            return ObBitBase::isOn(this->vOneZero,index);
+        }
+
+        bool isOff(const unsigned short &index)
+        {
+            return ObBitBase::isOff(this->vOneZero,index);
+        }
+
+        void set(const unsigned short &index)
+        {
+            ObBitBase::set(this->vOneZero,index);
+        }
+
+        void unset(const unsigned short &index)
+        {
+            ObBitBase::unset(this->vOneZero,index);
+        }
+
+        void toggle(const unsigned short &index)
+        {
+            ObBitBase::toggle(this->vOneZero,index);
+        }
+
+        void setRightMost()
+        {
+            ObBitBase::setRightMost(this->vOneZero);
+        }
+
+        void unsetRightMost()
+        {
+            ObBitBase::unsetRightMost(this->vOneZero);
+        }
+
+        char * binary()
+        {
+            return ObBitBase::binary(this->vOneZero);
+        }
+
+
+};
 
 
 
