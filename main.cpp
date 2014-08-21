@@ -5,6 +5,23 @@ using namespace std;
 
 
 
+void Convert(unsigned int val)
+{
+   unsigned int mask = 1 << (sizeof(int) * 8 - 1);
+
+   for(int i = 0; i < sizeof(int) * 8; i++)
+   {
+      if( (val & mask) == 0 )
+         cout << '0' ;
+      else
+         cout << '1' ;
+
+      mask  >>= 1;
+   }
+   cout << endl ;
+}
+
+
 
 
 int main()
@@ -67,10 +84,23 @@ int main()
 
     cout << b64.getBitSet() << endl;
 */
-    unsigned long a = 0;
-    ObBitBase::on(a);
-    cout << a;
+    //unsigned long a = 0;
+    //ObBitBase::on(a);
+    //ObBitBase::set(a,1);
+    //cout << a<<endl;
+    //for(unsigned int i = 1; i < 2; i++)
+    //Convert(a);
 
+    unsigned char a1 = 83;
+    unsigned short a2 = 83;
+    unsigned long a3 = 83;
+    unsigned long long a4 = 83;
+    ObBitBase::on(a4);
+
+    cout << ObBitBase::binary(a1) << endl;
+    cout << ObBitBase::binary(a2) << endl;
+    cout << ObBitBase::binary(a3) << endl;
+    cout << ObBitBase::binary(a4) << endl;
     return 0;
 }
 

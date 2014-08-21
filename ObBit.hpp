@@ -30,7 +30,7 @@ class ObBitBase{
 
         ///////////////////////////////////////////////////////////////////////
         /// \brief on set all bit 1
-        /// \param number 8bit/16bit/32bit/64bit signed/unsigned integer
+        /// \param number 8bit/16bit/32bit/64bit unsigned integer
         ///
         /// turn on all available bits
         ///////////////////////////////////////////////////////////////////////
@@ -42,7 +42,7 @@ class ObBitBase{
 
         ///////////////////////////////////////////////////////////////////////
         /// \brief off set all bit 0
-        /// \param number 8bit/16bit/32bit/64bit signed/unsigned integer
+        /// \param number 8bit/16bit/32bit/64bit unsigned integer
         ///
         /// turn off all avialable bits
         ///////////////////////////////////////////////////////////////////////
@@ -54,7 +54,7 @@ class ObBitBase{
 
         ///////////////////////////////////////////////////////////////////////
         /// \brief isOn check if the bit is on
-        /// \param number 8bit/16bit/32bit/64bit signed/unsigned integer
+        /// \param number 8bit/16bit/32bit/64bit unsigned integer
         /// \param index bit position
         /// \return true or false
         ///
@@ -68,7 +68,7 @@ class ObBitBase{
 
         ///////////////////////////////////////////////////////////////////////
         /// \brief isOff check if the bit is off
-        /// \param number 8bit/16bit/32bit/64bit signed/unsigned integer
+        /// \param number 8bit/16bit/32bit/64bit unsigned integer
         /// \param index bit position
         /// \return true or false
         ///
@@ -82,7 +82,7 @@ class ObBitBase{
 
         ///////////////////////////////////////////////////////////////////////
         /// \brief set turn on bit
-        /// \param number 8bit/16bit/32bit/64bit signed/unsigned integer
+        /// \param number 8bit/16bit/32bit/64bit unsigned integer
         /// \param index bit position
         ///
         /// turn on bit at specified position
@@ -95,7 +95,7 @@ class ObBitBase{
 
         ///////////////////////////////////////////////////////////////////////
         /// \brief unset turn off bit
-        /// \param number 8bit/16bit/32bit/64bit signed/unsigned integer
+        /// \param number 8bit/16bit/32bit/64bit unsigned integer
         /// \param index bit position
         ///
         /// turn off bit at specified position
@@ -108,7 +108,7 @@ class ObBitBase{
 
         ///////////////////////////////////////////////////////////////////////
         /// \brief toggle toggle bitween on and off
-        /// \param number 8bit/16bit/32bit/64bit signed/unsigned integer
+        /// \param number 8bit/16bit/32bit/64bit unsigned integer
         /// \param index bit position
         ///////////////////////////////////////////////////////////////////////
         static void toggle(unsigned char &number, const unsigned short &index);
@@ -119,7 +119,7 @@ class ObBitBase{
 
         ///////////////////////////////////////////////////////////////////////
         /// \brief setRightMost turn on the rightmost bit
-        /// \param number 8bit/16bit/32bit/64bit signed/unsigned integer
+        /// \param number 8bit/16bit/32bit/64bit unsigned integer
         ///
         /// turn on the right most bit
         ///////////////////////////////////////////////////////////////////////
@@ -131,7 +131,7 @@ class ObBitBase{
 
         ///////////////////////////////////////////////////////////////////////
         /// \brief unsetRightMost turn off the rightmost bit
-        /// \param number 32 bit integer
+        /// \param number 8bit/16bit/32bit/64bit unsigned integer
         ///
         /// turn off the right most bit
         ///////////////////////////////////////////////////////////////////////
@@ -142,28 +142,16 @@ class ObBitBase{
 
 
         ///////////////////////////////////////////////////////////////////////
-        /// \brief isolateRightMostOne isolate the right most one bit
-        /// \param number 32 bit integer
+        /// \brief binary convert decimal number to binay
+        /// \param number 8bit/16bit/32bit/64bit unsigned integer
+        /// \return char pointer (string)
         ///
-        /// protect the rightmost one bit and change other bits
+        /// convert decimal number to binary using bitwise operaion
         ///////////////////////////////////////////////////////////////////////
-        static void isolateRightMostOne(unsigned char &number);
-        static void isolateRightMostOne(unsigned short &number);
-        static void isolateRightMostOne(unsigned long &number);
-        static void isolateRightMostOne(unsigned long long &number);
-
-
-        ///////////////////////////////////////////////////////////////////////
-        /// \brief isolateRightMostZero
-        /// \param number
-        ///
-        /// protect the rightmost zero bit and change other bits
-        ///////////////////////////////////////////////////////////////////////
-        static void isolateRightMostZero(unsigned char &number);
-        static void isolateRightMostZero(unsigned short &number);
-        static void isolateRightMostZero(unsigned long &number);
-        static void isolateRightMostZero(unsigned long long &number);
-
+        static char * binary(unsigned char &number);
+        static char * binary(unsigned short &number);
+        static char * binary(unsigned long &number);
+        static char * binary(unsigned long long &number);
 };
 
 
