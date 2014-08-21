@@ -26,14 +26,17 @@ teplate class - ObBit
 How To Use
 ================
 
-#include <iostream>
-#include "ObBit.hpp"
+\#include \<iostream\>
+
+\#include "ObBit.hpp"
 
 using namespace std;
 
 int main()
+
 {
     cout << "8 BIT ObBit Example" << endl;
+
     ObBit<UBIT8> b8;
 
     cout <<endl;
@@ -72,7 +75,3 @@ int main()
 
     return 0;
 }
-
-
-
-
