@@ -1,7 +1,13 @@
 ObBit
 =====
 
-ObBit is created to manipulate the 8/16/32/64 bit unsigned integer by bitwise. The motto of this library to save a single byte of memory if possible. By using this library one can easily use a 8 bit integer to store 8 different states on a single byte rather than 8 bytes for boolean type. ObBit index is One Based.
+ObBit is created to manipulate bitwise the 8/16/32/64 bit unsigned integer.
+
+The motto of this library to save a single byte of memory if possible.
+
+By using this library one can easily use a 8 bit integer to store 8 different states on a single byte rather than 8 bytes for boolean type.
+
+ObBit index is One Based and counted right to left
 
 
 Type Information
