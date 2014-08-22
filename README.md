@@ -53,6 +53,8 @@ std::cout<< b.isOn(3) << endl;  //check if the 3rd bit is on
 
 std::cout<< b.isOff(3) << endl;  //check if the 3rd bit is off
 
+std::cout << b.binary() << endl;  // get the binary representation of the number
+
 
 For 16 bit use - UBIT16
 
