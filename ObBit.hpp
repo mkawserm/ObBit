@@ -54,6 +54,11 @@ template <typename T> class ObBit{
             this->vOneZero = -1;
         }
 
+        void on(const unsigned short &index)
+        {
+            this->set(index);
+        }
+
         ///////////////////////////////////////////////////////////////////////
         /// \brief off set all bit 0
         ///
@@ -62,6 +67,11 @@ template <typename T> class ObBit{
         void off()
         {
             this->vOneZero = 0;
+        }
+
+        void off(const unsigned short &index)
+        {
+            this->unset(index);
         }
 
 
