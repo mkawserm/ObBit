@@ -45,6 +45,9 @@ int main()
 
     cout << "decimal:" << b8.decimal() << endl;
 
+
+    cout << b8 << endl;
+
     cout <<endl<<"******************************************************************"<<endl<<endl;
 
     return 0;

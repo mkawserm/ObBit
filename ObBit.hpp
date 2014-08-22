@@ -19,6 +19,8 @@
 #ifndef OBBIT
 #define OBBIT
 
+#include <iostream>
+
 typedef unsigned char UBIT8;  // unsigned 8bit integer
 typedef unsigned short UBIT16;  // unsigned 16bit integer
 typedef unsigned long UBIT32;  // unsigned 32bit integer
@@ -42,16 +44,34 @@ template <typename T> class ObBit{
 
         }
 
+        ///////////////////////////////////////////////////////////////////////
+        /// \brief on set all bit 1
+        ///
+        /// turn on all bits
+        ///////////////////////////////////////////////////////////////////////
         void on()
         {
             this->vOneZero = -1;
         }
 
+        ///////////////////////////////////////////////////////////////////////
+        /// \brief off set all bit 0
+        ///
+        /// turn off all bits
+        ///////////////////////////////////////////////////////////////////////
         void off()
         {
             this->vOneZero = 0;
         }
 
+
+        ///////////////////////////////////////////////////////////////////////
+        /// \brief isOn check if the bit is on
+        /// \param index bit position
+        /// \return true or false
+        ///
+        /// check if the bit is on at specified position
+        ///////////////////////////////////////////////////////////////////////
         bool isOn(const unsigned short &index)
         {
             T one = 1;
@@ -59,39 +79,84 @@ template <typename T> class ObBit{
             else return false;
         }
 
+
+        ///////////////////////////////////////////////////////////////////////
+        /// \brief isOff check if the bit is off
+        /// \param index bit position
+        /// \return true or false
+        ///
+        /// check if the bit is off at specified position
+        ///////////////////////////////////////////////////////////////////////
         bool isOff(const unsigned short &index)
         {
             return !this->isOn(index);
         }
 
+
+        ///////////////////////////////////////////////////////////////////////
+        /// \brief set turn on bit
+        /// \param index bit position
+        ///
+        /// turn on bit at specified position
+        ///////////////////////////////////////////////////////////////////////
         void set(const unsigned short &index)
         {
             T one = 1;
             this->vOneZero |= one<<(index-1);  // y = x | (1<<n)
         }
 
+
+        ///////////////////////////////////////////////////////////////////////
+        /// \brief unset turn off bit
+        /// \param index bit position
+        ///
+        /// turn off bit at specified position
+        ///////////////////////////////////////////////////////////////////////
         void unset(const unsigned short &index)
         {
             T one = 1;
             this->vOneZero &= ~(one<<(index-1));  // y = x & ~(1<<n)
         }
 
+
+        ///////////////////////////////////////////////////////////////////////
+        /// \brief toggle toggle bitween on and off
+        /// \param index bit position
+        ///////////////////////////////////////////////////////////////////////
         void toggle(const unsigned short &index)
         {
             T one = 1;
             this->vOneZero ^= one<<(index-1); // y = x ^ (1<<n)
         }
 
+
+        ///////////////////////////////////////////////////////////////////////
+        /// \brief setRightMost turn on the rightmost bit
+        ///
+        /// turn on the right most bit
+        ///////////////////////////////////////////////////////////////////////
         void setRightMost()
         {
             this->vOneZero |= (this->vOneZero+1);  // y = x | (x+1)
         }
 
+
+        ///////////////////////////////////////////////////////////////////////
+        /// \brief unsetRightMost turn off the rightmost bit
+        ///
+        /// turn off the right most bit
+        ///////////////////////////////////////////////////////////////////////
         void unsetRightMost()
         {
             this->vOneZero &= (this->vOneZero-1);  // y = x & (x-1)
         }
 
+        ///////////////////////////////////////////////////////////////////////
+        /// \brief binary convert decimal number to binay
+        /// \return char pointer (string)
+        ///
+        /// convert decimal number to binary using bitwise operaion
+        ///////////////////////////////////////////////////////////////////////
         char * binary()
         {
             unsigned short length = sizeof(this->vOneZero)*8;
@@ -111,9 +176,31 @@ template <typename T> class ObBit{
             return bnumber;
         }
 
+
+        ///////////////////////////////////////////////////////////////////////
+        /// \brief decimal decimal representation of the number
+        /// \return unsigned long long integer
+        ///
+        /// get the decimal representation of the number
+        ///////////////////////////////////////////////////////////////////////
         UBIT64 decimal()
         {
             return UBIT64(this->vOneZero);
+        }
+
+
+        ///////////////////////////////////////////////////////////////////////
+        /// \brief operator <<
+        /// \param output
+        /// \param ob
+        /// \return ostream
+        ///
+        /// overloaded << operator to print in binary format
+        ///////////////////////////////////////////////////////////////////////
+        friend std::ostream &operator<<(std::ostream &output,ObBit<T> &ob)
+        {
+            output << ob.binary();
+            return output;
         }
 
 
