@@ -38,6 +38,7 @@ Include the ObBit header into your source code by
 Example for 8 bit
 ==================
 
+
 ObBit<UBIT8> b;
 
 b.on();  // turn on all bit
