@@ -31,6 +31,29 @@ Include the ObBit header into your source code by \#include "ObBit.hpp"
 Example for 8 bit
 ==================
 
-ObBit<UBIT8> b8;
-b8.on()  // turn on all bit
-b8.off()  // turn off all bit
+ObBit<UBIT8> b;
+
+b.on();  // turn on all bit
+
+b.off();  // turn off all bit
+
+b.setRightMost();  // turn on the right most bit
+
+b.unsetRightMost();  // turn off the right most bit
+
+b.set(3);  // turn on the 3rd bit from right to left
+
+b.unset(3);  // turn of the 3rd bit from right to left
+
+b.toggle(3);  // toggle the 3rd bit from right to left
+
+std::cout<< b.isOn(3) << endl;  //check if the 3rd bit is on
+
+std::cout<< b.isOff(3) << endl;  //check if the 3rd bit is off
+
+
+For 16 bit use - UBIT16
+
+For 32 bit use - UBIT32
+
+For 64 bit use - UBIT64
