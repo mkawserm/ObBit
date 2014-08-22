@@ -43,6 +43,8 @@ int main()
     cout<< "isOn(3):" << b8.isOn(3) << endl;
     cout<< "isOff(3):" << b8.isOff(3) << endl;
 
+    cout << "decimal:" << b8.decimal() << endl;
+
     cout <<endl<<"******************************************************************"<<endl<<endl;
 
     return 0;

@@ -1,6 +1,6 @@
 /*
  * Library Name : ObBit (Object Bit)
- * Version : 1.0.0
+ * Version : 1.0.1
  * Developer Name : KaWsEr
  * Developer Website : http://kawser.org
  * Developer Git : https://github.com/mkawserm
@@ -24,6 +24,10 @@ typedef unsigned short UBIT16;  // unsigned 16bit integer
 typedef unsigned long UBIT32;  // unsigned 32bit integer
 typedef unsigned long long UBIT64;  // unsigned 64bit integer
 
+typedef UBIT8 BIT8;
+typedef UBIT16 BIT16;
+typedef UBIT32 BIT32;
+typedef UBIT64 BIT64;
 
 
 template <typename T> class ObBit{
@@ -57,7 +61,7 @@ template <typename T> class ObBit{
 
         bool isOff(const unsigned short &index)
         {
-            return this->isOn(index);
+            return !this->isOn(index);
         }
 
         void set(const unsigned short &index)
@@ -105,6 +109,11 @@ template <typename T> class ObBit{
             }
             bnumber[i] = '\0';
             return bnumber;
+        }
+
+        UBIT64 decimal()
+        {
+            return UBIT64(this->vOneZero);
         }
 
 
