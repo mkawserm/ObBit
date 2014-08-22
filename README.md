@@ -39,7 +39,7 @@ Example for 8 bit
 ==================
 
 
-ObBit<UBIT8> b;
+ObBit\<UBIT8\> b;
 
 b.on();  // turn on all bit
 
