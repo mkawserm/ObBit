@@ -26,3 +26,9 @@ teplate class - ObBit
 How To Use
 ================
 Include the ObBit header into your source code by \#include "ObBit.hpp"
+
+
+Example for 8 bit
+==================
+
+ObBit
