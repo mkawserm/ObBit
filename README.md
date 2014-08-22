@@ -61,6 +61,8 @@ std::cout<< b.isOff(3) << endl;  //check if the 3rd bit is off
 
 std::cout << b.binary() << endl;  // get the binary representation of the number
 
+std::cout << b.decimal() << endl;  // get the decimal representation of the number
+
 
 For 16 bit use - UBIT16
 
