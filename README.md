@@ -31,4 +31,6 @@ Include the ObBit header into your source code by \#include "ObBit.hpp"
 Example for 8 bit
 ==================
 
-ObBit
+ObBit<UBIT8> b8;
+b8.on()  // turn on all bit
+b8.off()  // turn off all bit
