@@ -23,7 +23,6 @@ unsigned 64 bit integer - UBIT64
 
 Available Objects
 =================
-class - ObBitBase
 
 teplate class - ObBit
 
